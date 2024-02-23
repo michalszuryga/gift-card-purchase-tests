@@ -69,6 +69,9 @@ describe("Verify Landing Page Elements", () => {
     cy.get(
       "#footer div.flex.flex-row.flex-wrap.max-w-sm.lg\\:max-w-xl.mx-auto.justify-around a"
     ).each(($a, index) => {
+      cy.request(footerLinks[index].url).then((response) => {
+        expect(response.status).to.be.eq(200);
+      });
       expect($a.text()).to.eq(footerLinks[index].text);
       expect($a).to.have.attr("href", footerLinks[index].url);
     });
