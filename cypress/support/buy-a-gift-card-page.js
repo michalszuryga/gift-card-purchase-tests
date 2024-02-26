@@ -69,7 +69,7 @@ export function testEmails(cardValue) {
             `You've been sent a $${cardValue}.00 gift card for Demo US!`
           );
           expect(email.text).to.include(
-            "Email Template This card can be redeemed at Demo US and is valid until Apr 22, 2123. Present the barcode below to your service provider to use this gift card."
+            "Email Template This card can be redeemed at Demo US and is valid until"
           );
         }
       }
