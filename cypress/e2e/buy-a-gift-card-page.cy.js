@@ -20,7 +20,7 @@ describe("Verify Page Elements", () => {
   });
 
   it("Should allow to select any amount available", () => {
-    const value = "100";
+    const value = Cypress._.random(20, 999);
 
     cy.get("li:nth-child(4) > label > span").click();
     cy.get("li:nth-child(4) > div > input").as("otherBox").type(`${value}`);
@@ -41,7 +41,8 @@ describe("Verify Page Elements", () => {
     );
   });
 
-  it.skip("Check footer", () => { //BUG
+  it.skip("Check footer", () => {
+    //BUG
     const contactInfo = [
       "Arden Courts",
       "Central Park South, New York, 11122-2233, United States",
