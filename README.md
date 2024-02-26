@@ -21,7 +21,6 @@ Navigate to the project directory and install the necessary dependencies by runn
 
 5. Click on **'buy-a-gift-card-page.cy.js'** test file
 
-  
 
 ## Bugs found:
 
@@ -35,7 +34,14 @@ Navigate to the project directory and install the necessary dependencies by runn
 
 Example bug description attached in a separate file **'Bug.txt'**
 
-  
+
+## CI/CD
+
+I've set up GitHub Actions to trigger a job on every git push action and to run it every night at 1:00 AM UTC time. To see the test execution details:
+1. From the project page go to 'Actions' tab
+2. Click on a workflow
+3. Click 'build'
+4. Expand 'Run Cypress Tests' section 
   
 
 ## Notes & ideas:
