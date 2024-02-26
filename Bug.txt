@@ -1,0 +1,24 @@
+Title: 'Required' message won't disappear when 'Other' amount and then 50/100/150 USD is selected
+
+Description:
+Upon selecting the 'Other' option for the amount field and then choosing 50, 100, or 150 dollars from the available options, the 'Required' message persists on the screen.
+
+Steps to Reproduce:
+1. Navigate to the Gift Card Value section on the website.
+2. Click the 'Other' checkbox.
+3. Select either 50, 100, or 150 euros from the available options.
+
+Actual Result:
+The 'Required' message remains visible on the screen, even after selecting a valid amount of 50/100/150 dollars.
+
+Expected Result:
+Upon selecting a valid amount from the dropdown menu, the 'Required' message should disappear.
+
+Environment:
+Operating System: Windows 10
+Browser: Google Chrome version 98.0.4758.102
+Device: Desktop
+Product environment: demo website
+
+Attachments:
+- 01-bug-required-message.png
