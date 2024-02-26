@@ -1,43 +1,8 @@
 /// <reference types="cypress" />
-import * as mainPage from "../support/buy-a-gift-card-page.js";
 
-describe("Verify Landing Page Elements", () => {
+describe("Verify Page Elements", () => {
   beforeEach(() => {
     cy.visit("https://gift-cards.phorest.com/salons/demous#");
-  });
-
-  it("Check 'Send to me' purchasing gift-card flow", () => {
-    let email = "michal@testsendr.link";
-    const firstName = "First name";
-    const lastName = "Last name";
-    const cardValue = "50";
-
-    cy.get("#option50").click();
-    mainPage.fillInSendToMeData(email, firstName, lastName);
-    cy.get("[data-target='checkout.checkoutButton']")
-      .contains("Checkout")
-      .click();
-    mainPage.verifySummaryPage(cardValue, email);
-    cy.get('[data-action="confirm#confirmAction"]').click();
-    mainPage.fillInCardDetails();
-    mainPage.testEmails(cardValue);
-  });
-
-  it.skip("Check 'Send to someone' purchasing gift-card flow", () => {
-    // let email = "";
-    // const firstName = "";
-    // const lastName = "";
-    // let recipientEmail = "";
-
-    // cy.get("option100").click();
-    // mainPage.fillInSendToSomeoneData(email, firstName, lastName, recipientEmail)
-    // cy.get("[data-target='checkout.checkoutButton']")
-    //   .contains("Checkout")
-    //   .click();
-    // mainPage.verifySummaryPage(cardValue, email);
-    // cy.get('[data-action="confirm#confirmAction"]').click();
-    // mainPage.fillInCardDetails();
-    // mainPage.testEmails(cardValue);
   });
 
   it("Should display the header", () => {
@@ -55,8 +20,12 @@ describe("Verify Landing Page Elements", () => {
   });
 
   it("Should allow to select any amount available", () => {
-    //rand
-    mainPage.verifyGiftCardOtherValue(100);
+    const value = "100";
+
+    cy.get("li:nth-child(4) > label > span").click();
+    cy.get("li:nth-child(4) > div > input").as("otherBox").type(`${value}`);
+    cy.get("#voucher-image-value").should("contain", `$${value}.00`);
+    cy.contains("Total cost").next("span").should("have.text", `$${value}.00`);
   });
 
   it("Fill in 'Send to me' section", () => {

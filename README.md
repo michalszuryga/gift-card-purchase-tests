@@ -38,6 +38,7 @@ Example bug description attached in a separate file **'Bug.txt'**
   
   
 
-## Notes:
+## Notes & ideas:
 
 - One suggestion: there could be a validation put in place to check if emails are different when 'Send to someone' option is used
+- Currently there is simple TestSendr api to verify e-mails. In real scenario something more advanced could be used, to also verify visibility of images and hyperlinks
