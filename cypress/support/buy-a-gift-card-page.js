@@ -49,9 +49,7 @@ export function testEmails(cardValue, email) {
         if (index === 0 || index === 1) {
           if (email.from === "info@new-york-salon.phorest.com") {
             expect(email.subject).to.equal("Your Receipt for Arden Courts");
-            expect(email.text).to.include(
-              "Your Receipt Your RECEIPT from 100 Juniper Street 3rd Floor, Philadelphia, PA, 19107 (176) 512-5663 x3 demousa@phorest.com Vat No: 000000000000 TRANSACTION DETAILS Date"
-            );
+            expect(email.text).to.include("Your Receipt Your RECEIPT from 100 Juniper Street 3rd Floor, Philadelphia, PA, 19107 (176) 512-5663 x3 demousa@phorest.com Vat No: 000000000000 TRANSACTION DETAILS Date");
             getGiftCardCode().then((code) => {
               expect(email.text).to.contain(code);
             });
@@ -114,7 +112,7 @@ export function fillInCardDetails() {
   iFrameHandling('input[placeholder="Card number"]').type(cardNumber);
   iFrameHandling('input[placeholder="MM / YY"]').type(validUntil);
   iFrameHandling('input[placeholder="CVC"]').type(cvc);
-  cy.contains("button", "Submit").click({force:true});
+  cy.contains("button", "Submit").click({ force: true });
 }
 
 function iFrameHandling(selector, input) {
