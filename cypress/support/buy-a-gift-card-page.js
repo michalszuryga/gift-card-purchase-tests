@@ -50,7 +50,7 @@ export function testEmails(cardValue, email) {
           if (email.from === "info@new-york-salon.phorest.com") {
             expect(email.subject).to.equal("Your Receipt for Arden Courts");
             expect(email.text).to.include(
-              "Your Receipt Your RECEIPT from Central Park South, Central Park South, New York, New York, 11122-2233 (176) 512-5663 x3 demousa@phorest.com Vat No: 000000000000 TRANSACTION DETAILS Date"
+              "Your Receipt Your RECEIPT from 100 Juniper Street 3rd Floor, Philadelphia, PA, 19107 (176) 512-5663 x3 demousa@phorest.com Vat No: 000000000000 TRANSACTION DETAILS Date"
             );
             getGiftCardCode().then((code) => {
               expect(email.text).to.contain(code);
